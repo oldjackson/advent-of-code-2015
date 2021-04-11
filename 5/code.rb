@@ -7,10 +7,10 @@ puts
 def nice?(input_string)
   # occurrences of any of a, e, i, o, u
   return false if input_string.scan(/[aeiou]/).size < 3
-  
+
   # matches any character and its repetition (\1 => backreference to first matching group)
   return false if input_string.match(/(.)\1/).nil?
-  
+
   # matches ab OR cd OR /..
   return false if input_string.match(/(ab|cd|pq|xy)/)
 
